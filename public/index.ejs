@@ -21,9 +21,9 @@
         formatData = function (data) {return "["+data.createdAt + "] : " + data.data};
     return {
         add    : function (msg) {datas.push(msg);
-                                    //$('<div></div>').text(formatData(msg)).css('color', msg.option.color).appendTo(_id); },
+                                    $('<div></div>').text(formatData(msg)).css('color', msg.option.color).appendTo(_id); },
 
-                                    $('<div></div>').text(formatData(msg)).appendTo(_id); },
+                                    //$('<div></div>').text(formatData(msg)).appendTo(_id); },
                                   length : function () {return datas.length;}
     }
   };
@@ -103,7 +103,7 @@
 <body>
   <div id='connect_status'>choge</div>
     message : <input id='send_body' value='' type="text"/>
-    <input type="button" id='send_button'/>
+    <input type="button" id='send_button' value='送信'/>
     <div><input type="button" id='switch_socket_button' value='ソケットON/Off'/></div>
     <hr/>
     <div id='message_boad'></div>
