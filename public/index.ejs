@@ -1,15 +1,12 @@
 <html>
 <head> 
-<script>
-    window.name = 'moge';
-</script>
 <script src="http://motoki.local/socket-io/socket.io.js"></script> 
 <script src="http://motoki.local/socket-io/json2.js"></script> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
 <script>
   //{{{ messageBoad
   Message = function(id){
-    var data      = [];
+    var data = [];
     return {
       add    : function (msg) {data.push(msg)},
       length : function (msg) {return data.length}}
@@ -23,7 +20,6 @@
         add    : function (msg) {datas.push(msg);
                                     $('<div></div>').text(formatData(msg)).css('color', msg.option.color).appendTo(_id); },
 
-                                    //$('<div></div>').text(formatData(msg)).appendTo(_id); },
                                   length : function () {return datas.length;}
     }
   };
@@ -68,8 +64,8 @@
   function onConnect()
   {
       log('onConnect');
-      var msg  = {"type"    : messageType.GET_DATA,
-                  "more_id" : msgBoad.length()};
+      var msg = {"type"    : messageType.GET_DATA,
+                 "more_id" : msgBoad.length()};
       socket.send(msg);
       dispStatus.connect();
   }
